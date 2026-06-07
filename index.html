@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>🌏 Singapore · KL · Langkawi 2026</title>
+<meta name="description" content="9-day trip: Singapore → Kuala Lumpur → Langkawi · June 23 – July 1, 2026">
+<meta property="og:type" content="website">
+<meta property="og:title" content="🌏 SGP · KL · Langkawi Trip 2026">
+<meta property="og:description" content="9-day adventure: Singapore 🇸🇬 · KL 🇲🇾 · Langkawi 🏝️ · Jun 23 – Jul 1, 2026">
+<meta name="theme-color" content="#111827">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sg:#e53935;--sg2:#b71c1c;
+  --my:#1565c0;--my2:#0d47a1;
+  --lk:#00897b;--lk2:#00695c;
+  --tr:#6a1b9a;--tr2:#4a148c;
+  --w:#fff;
+  --g50:#f9fafb;--g100:#f3f4f6;--g200:#e5e7eb;
+  --g400:#9ca3af;--g500:#6b7280;--g700:#374151;--g900:#111827;
+  --r:20px;--rs:10px;
+  --sh:0 1px 4px rgba(0,0,0,.07),0 6px 20px rgba(0,0,0,.06);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;background:var(--g100);color:var(--g900);line-height:1.5;-webkit-font-smoothing:antialiased}
+
+/* ── SCROLL PROGRESS ── */
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#e53935,#6a1b9a,#00897b);width:0%;z-index:999;transition:width .1s}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:310px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#111}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.8) 100%)}
+.hero-content{position:relative;z-index:1;padding:2rem 1.25rem 2.5rem;color:#fff;text-align:center}
+.hero-flags{font-size:2.4rem;letter-spacing:.35rem;margin-bottom:.7rem}
+.hero h1{font-size:clamp(1.5rem,6vw,2.4rem);font-weight:900;letter-spacing:-.02em;line-height:1.15;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.hero-dates{margin-top:.4rem;font-size:.95rem;opacity:.88;font-weight:500}
+.hero-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:.45rem;margin-top:1.3rem}
+.hero-pill{background:rgba(255,255,255,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);border-radius:30px;padding:.32rem .85rem;font-size:.78rem;font-weight:700;color:#fff}
+
+/* ── DAY NAV ── */
+.day-nav{position:sticky;top:0;z-index:100;background:var(--w);box-shadow:0 1px 0 rgba(0,0,0,.08),0 2px 12px rgba(0,0,0,.06);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.day-nav::-webkit-scrollbar{display:none}
+.day-nav-track{display:flex;min-width:max-content;padding:0 .5rem}
+.day-btn{display:flex;flex-direction:column;align-items:center;gap:.02rem;padding:.6rem .9rem;text-decoration:none;color:var(--g400);border-bottom:2.5px solid transparent;transition:color .15s,opacity .15s;white-space:nowrap;user-select:none}
+.day-btn .dn{font-size:1rem;font-weight:900;color:var(--g700);line-height:1.2}
+.day-btn .dd{font-size:.66rem;font-weight:600;letter-spacing:.02em}
+.day-btn:hover{color:var(--g700)}
+.day-btn.active{color:var(--g900)}
+.day-btn.c-sg{border-bottom-color:var(--sg)}
+.day-btn.c-my{border-bottom-color:var(--my)}
+.day-btn.c-lk{border-bottom-color:var(--lk)}
+.day-btn.c-tr{border-bottom-color:var(--tr)}
+
+/* ── MAIN ── */
+main{max-width:720px;margin:0 auto;padding:1.2rem .9rem 2.5rem}
+
+/* ── QUICK SUMMARY ── */
+.qsum{margin-bottom:1.5rem}
+.section-label{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--g500);margin-bottom:.6rem;padding:0 .1rem}
+.qsum-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.qc{background:var(--w);border-radius:var(--rs);padding:.8rem .9rem;box-shadow:var(--sh);display:flex;flex-direction:column;gap:.18rem}
+.qc-icon{font-size:1.15rem}
+.qc-label{font-size:.63rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--g400)}
+.qc-value{font-size:.82rem;font-weight:700;color:var(--g900);line-height:1.35}
+
+/* ── COUNTRY DIVIDER ── */
+.cdiv{display:flex;align-items:center;gap:.75rem;margin:1.5rem .1rem .7rem;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--g500)}
+.cdiv::before,.cdiv::after{content:'';flex:1;height:1px;background:var(--g200)}
+
+/* ── DAY CARD ── */
+.day-card{background:var(--w);border-radius:var(--r);box-shadow:var(--sh);margin-bottom:1.1rem;overflow:hidden;opacity:0;transform:translateY(16px);transition:opacity .4s ease,transform .4s ease}
+.day-card.visible{opacity:1;transform:none}
+
+/* ── COVER ── */
+.cover{position:relative;height:195px;overflow:hidden;background:var(--g200)}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease}
+.day-card:hover .cover img{transform:scale(1.04)}
+.cover-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.08) 0%,rgba(0,0,0,.22) 40%,rgba(0,0,0,.72) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:.95rem 1.1rem .85rem;color:#fff}
+.cover-badge{font-size:.65rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;opacity:.82;margin-bottom:.18rem}
+.cover-title{font-size:clamp(1rem,4vw,1.18rem);font-weight:900;line-height:1.22;letter-spacing:-.01em;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.cover-sub{font-size:.74rem;opacity:.83;margin-top:.18rem;font-weight:500}
+.cover-tag{position:absolute;top:.85rem;right:.85rem;background:rgba(0,0,0,.42);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:1.05rem;padding:.32rem .5rem;border-radius:9px;line-height:1}
+.cover-accent{position:absolute;bottom:0;left:0;right:0;height:3px}
+.cover.sg .cover-accent{background:var(--sg)}
+.cover.my .cover-accent{background:var(--my)}
+.cover.lk .cover-accent{background:var(--lk)}
+.cover.tr .cover-accent{background:var(--tr)}
+
+/* ── CARD BODY ── */
+.card-body{padding:.5rem 1rem 1rem}
+
+/* ── TIMELINE ── */
+.tl-group{margin-top:.55rem}
+.tl-group-label{font-size:.63rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--g400);padding:.5rem 0 .25rem 2.4rem;border-top:1px solid var(--g100)}
+.tl-group:first-child .tl-group-label{border-top:none;padding-top:.3rem}
+.tl-items{position:relative;padding-left:2.4rem}
+.tl-items::before{content:'';position:absolute;left:.92rem;top:4px;bottom:6px;width:1.5px;background:linear-gradient(to bottom,var(--g200) 80%,transparent 100%)}
+.tl-item{position:relative;display:flex;gap:.65rem;padding:.42rem 0;align-items:flex-start}
+.tl-dot{position:absolute;left:-1.55rem;top:.72rem;width:.52rem;height:.52rem;border-radius:50%;background:var(--w);border:2px solid var(--g300,#d1d5db);box-shadow:0 0 0 2px var(--w);flex-shrink:0}
+.tl-icon{font-size:1rem;flex-shrink:0;width:1.55rem;text-align:center;line-height:1.55;margin-top:.04rem}
+.tl-content{flex:1;min-width:0}
+.tl-time{font-size:.78rem;font-weight:800;color:var(--g700);display:inline-block;background:var(--g100);border:1px solid var(--g200);border-radius:6px;padding:.18rem .55rem;margin-bottom:.28rem;letter-spacing:.01em;line-height:1.4}
+.tl-title{font-size:.89rem;font-weight:700;color:var(--g900);line-height:1.35}
+.tl-desc{font-size:.79rem;color:var(--g500);margin-top:.18rem;line-height:1.45}
+
+/* ── BADGES ── */
+.badge{display:inline-block;font-size:.6rem;font-weight:800;padding:.07rem .38rem;border-radius:20px;vertical-align:middle;margin-left:.28rem;letter-spacing:.02em;white-space:nowrap}
+.b-ok{background:#d1fae5;color:#065f46}
+.b-must{background:#fef3c7;color:#92400e}
+.b-tip{background:#e0f2fe;color:#075985}
+
+/* ── INFO BOX ── */
+.info-box{background:var(--g50);border:1px solid var(--g200);border-radius:var(--rs);padding:.65rem .85rem;margin:.5rem 0 .15rem;font-size:.8rem}
+.ib-name{font-weight:800;font-size:.84rem;color:var(--g900)}
+.ib-addr{color:var(--g500);margin-top:.12rem;font-size:.76rem}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:2rem 1rem 4.5rem;color:var(--g400);font-size:.78rem}
+footer .ff{font-size:1.5rem;margin-bottom:.4rem}
+
+/* ── SHARE FAB ── */
+.fab{position:fixed;bottom:1.2rem;right:1.2rem;z-index:200}
+.fab-btn{display:flex;align-items:center;gap:.45rem;background:#25d366;color:#fff;border:none;border-radius:28px;padding:.68rem 1.2rem;font-size:.84rem;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .15s,box-shadow .15s;font-family:inherit}
+.fab-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,211,102,.5)}
+.fab-btn:active{transform:scale(.96)}
+
+@media(min-width:600px){
+  main{padding:1.5rem 1.25rem 3rem}
+  .hero-content{padding:2.5rem 2rem 3rem}
+  .cover{height:230px}
+  .qsum-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1400&q=85&auto=format&fit=crop" alt="Singapore skyline" onerror="this.style.display='none'">
+  <div class="hero-grad"></div>
+  <div class="hero-content">
+    <div class="hero-flags">🇸🇬 🇲🇾 🏝️</div>
+    <h1>Singapore · KL · Langkawi</h1>
+    <p class="hero-dates">June 23 – July 1, 2026</p>
+    <div class="hero-pills">
+      <span class="hero-pill">✈️ 9 Days</span>
+      <span class="hero-pill">🌆 3 Countries</span>
+      <span class="hero-pill">🗺️ 4 Cities</span>
+      <span class="hero-pill">🎯 All Booked</span>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="day-nav" id="nav">
+  <div class="day-nav-track">
+    <a href="#day0" class="day-btn c-tr" data-id="day0"><span class="dn">0</span><span class="dd">Jun 23</span></a>
+    <a href="#day1" class="day-btn c-sg" data-id="day1"><span class="dn">1</span><span class="dd">Jun 24</span></a>
+    <a href="#day2" class="day-btn c-sg" data-id="day2"><span class="dn">2</span><span class="dd">Jun 25</span></a>
+    <a href="#day3" class="day-btn c-sg" data-id="day3"><span class="dn">3</span><span class="dd">Jun 26</span></a>
+    <a href="#day4" class="day-btn c-tr" data-id="day4"><span class="dn">4</span><span class="dd">Jun 27</span></a>
+    <a href="#day5" class="day-btn c-my" data-id="day5"><span class="dn">5</span><span class="dd">Jun 28</span></a>
+    <a href="#day6" class="day-btn c-tr" data-id="day6"><span class="dn">6</span><span class="dd">Jun 29</span></a>
+    <a href="#day7" class="day-btn c-lk" data-id="day7"><span class="dn">7</span><span class="dd">Jun 30</span></a>
+    <a href="#day8" class="day-btn c-lk" data-id="day8"><span class="dn">8</span><span class="dd">Jul 1</span></a>
+  </div>
+</nav>
+
+<main>
+
+<!-- QUICK SUMMARY -->
+<div class="qsum">
+  <div class="section-label">📋 Key Details</div>
+  <div class="qsum-grid">
+    <div class="qc"><div class="qc-icon">🏨</div><div class="qc-label">Singapore</div><div class="qc-value">V Lavender Hotel, Little India</div></div>
+    <div class="qc"><div class="qc-icon">🏠</div><div class="qc-label">Kuala Lumpur</div><div class="qc-value">Airbnb, Jalan Sultan Ismail</div></div>
+    <div class="qc"><div class="qc-icon">🌴</div><div class="qc-label">Langkawi</div><div class="qc-value">Tropika Resort, Pantai Cenang</div></div>
+    <div class="qc"><div class="qc-icon">🎟️</div><div class="qc-label">Pre-Booked</div><div class="qc-value">Wings of Time · Night Safari · Garden Rhapsody</div></div>
+  </div>
+</div>
+
+<!-- DAY 0 -->
+<section id="day0" class="day-card">
+  <div class="cover tr">
+    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80&auto=format&fit=crop" alt="Airplane" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#6a1b9a,#4a148c)'">
+    <div class="cover-overlay">
+      <div class="cover-badge">Day 0 · Mon, June 23</div>
+      <div class="cover-title">Departure Night</div>
+      <div class="cover-sub">Coimbatore → Singapore</div>
+    </div>
+    <div class="cover-tag">✈️</div>
+    <div class="cover-accent"></div>
+  </div>
+  <div class="card-body">
+    <div class="tl-group">
+      <div class="tl-group-label">🌙 Night</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🛫</div><div class="tl-content"><span class="tl-time">11:20 PM</span><div class="tl-title">Depart Coimbatore (CBE) — Scoot <span class="badge b-ok">BOOKED</span></div><div class="tl-desc">Overnight flight · Arrive Singapore early morning</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">💤</div><div class="tl-content"><span class="tl-time">Overnight</span><div class="tl-title">In-flight rest</div><div class="tl-desc">Sleep well — big day in Singapore ahead!</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cdiv">🇸🇬 Singapore</div>
+
+<!-- DAY 1 -->
+<section id="day1" class="day-card">
+  <div class="cover sg">
+    <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80&auto=format&fit=crop" alt="Singapore Marina Bay" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e53935,#b71c1c)'">
+    <div class="cover-overlay">
+      <div class="cover-badge">Day 1 · Tue, June 24</div>
+      <div class="cover-title">Arrival + City + Night Views</div>
+      <div class="cover-sub">Singapore 🇸🇬</div>
+    </div>
+    <div class="cover-tag">🦁</div>
+    <div class="cover-accent"></div>
+  </div>
+  <div class="card-body">
+    <div class="tl-group">
+      <div class="tl-group-label">🌅 Morning — Airport &amp; Arrival</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🛬</div><div class="tl-content"><span class="tl-time">6:35 AM</span><div class="tl-title">Land at Singapore Changi (SIN)</div><div class="tl-desc">Immigration + baggage · Allow 1–1.5 hrs</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🍽️</div><div class="tl-content"><span class="tl-time">~8:00 AM</span><div class="tl-title">Breakfast at Changi Airport</div><div class="tl-desc">World's best airport — explore the terminals</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">💦</div><div class="tl-content"><span class="tl-time">~8:30 AM</span><div class="tl-title">Jewel Changi — Rain Vortex <span class="badge b-tip">if time</span></div><div class="tl-desc">World's tallest indoor waterfall · Walking trails</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">🚇 Midday — Hotel &amp; Little India</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🏨</div><div class="tl-content"><span class="tl-time">~10:30 AM</span><div class="tl-title">V Lavender Hotel — Check-in / Bag Drop</div><div class="tl-desc">Little India area · Freshen up + rest</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🍛</div><div class="tl-content"><span class="tl-time">~12:30 PM</span><div class="tl-title">Lunch near Little India</div><div class="tl-desc">Indian food on Serangoon Road · Temple walk</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">🌆 Evening — Iconic Singapore Circuit</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🦁</div><div class="tl-content"><span class="tl-time">~5:00 PM</span><div class="tl-title">Merlion Park <span class="badge b-must">MUST</span></div><div class="tl-desc">Merlion Bay · Best skyline photos at golden hour</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🏙️</div><div class="tl-content"><span class="tl-time">~5:45 PM</span><div class="tl-title">Marina Bay Sands Skywalk</div><div class="tl-desc">Waterfront promenade · Night skyline views</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🌿</div><div class="tl-content"><span class="tl-time">~7:00 PM</span><div class="tl-title">Gardens by the Bay — Supertree Grove</div><div class="tl-desc">Cloud Dome if time · Supertree walk</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🌈</div><div class="tl-content"><span class="tl-time">7:45 PM &amp; 8:45 PM</span><div class="tl-title">Garden Rhapsody Light Show <span class="badge b-ok">BOOKED</span></div><div class="tl-desc">Spectacular light &amp; music show at Supertree Grove</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🍜</div><div class="tl-content"><span class="tl-time">~9:30 PM</span><div class="tl-title">Clarke Quay — Dinner + Nightlife</div><div class="tl-desc">Riverside restaurants · Singapore River walk 🎶</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 2 -->
+<section id="day2" class="day-card">
+  <div class="cover sg">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop" alt="Sentosa beach" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e53935,#b71c1c)'">
+    <div class="cover-overlay">
+      <div class="cover-badge">Day 2 · Wed, June 25</div>
+      <div class="cover-title">Sentosa Island Full Day</div>
+      <div class="cover-sub">Singapore 🇸🇬</div>
+    </div>
+    <div class="cover-tag">🏝️</div>
+    <div class="cover-accent"></div>
+  </div>
+  <div class="card-body">
+    <div class="tl-group">
+      <div class="tl-group-label">🌊 Full Day — Sentosa</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🚇</div><div class="tl-content"><span class="tl-time">Morning</span><div class="tl-title">Travel to Sentosa Island</div><div class="tl-desc">Via MRT + cable car or Sentosa Express monorail</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🐠</div><div class="tl-content"><span class="tl-time">~10:00 AM</span><div class="tl-title">S.E.A. Aquarium / Oceanarium <span class="badge b-must">MUST</span></div><div class="tl-desc">100,000+ marine animals · World-class aquarium</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🏖️</div><div class="tl-content"><span class="tl-time">Afternoon</span><div class="tl-title">Siloso / Palawan Beach</div><div class="tl-desc">Beach walks · Sky ride · Luge · Chill island vibes</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🍽️</div><div class="tl-content"><span class="tl-time">~6:00 PM</span><div class="tl-title">Dinner at Sentosa / VivoCity</div><div class="tl-desc">Fuel up before the evening show</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🎆</div><div class="tl-content"><span class="tl-time">7:15 PM</span><div class="tl-title">Wings of Time Show <span class="badge b-ok">BOOKED</span></div><div class="tl-desc">Water jets · Fire effects · Light beams on Siloso Beach</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 3 -->
+<section id="day3" class="day-card">
+  <div class="cover sg">
+    <img src="https://images.unsplash.com/photo-1582639510494-c80b5de9f148?w=900&q=80&auto=format&fit=crop" alt="Singapore Chinatown" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e53935,#b71c1c)'">
+    <div class="cover-overlay">
+      <div class="cover-badge">Day 3 · Thu, June 26</div>
+      <div class="cover-title">City Explore + Night Safari</div>
+      <div class="cover-sub">Singapore 🇸🇬</div>
+    </div>
+    <div class="cover-tag">🐅</div>
+    <div class="cover-accent"></div>
+  </div>
+  <div class="card-body">
+    <div class="tl-group">
+      <div class="tl-group-label">🌇 Morning &amp; Afternoon — City</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🏮</div><div class="tl-content"><span class="tl-time">Morning</span><div class="tl-title">Chinatown</div><div class="tl-desc">Buddha Tooth Relic Temple · Street food · Souvenir shops</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🛍️</div><div class="tl-content"><span class="tl-time">Afternoon</span><div class="tl-title">Orchard Road</div><div class="tl-desc">Singapore's iconic shopping belt · Malls · Cafes</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🍽️</div><div class="tl-content"><span class="tl-time">~5:30 PM</span><div class="tl-title">Early Dinner</div><div class="tl-desc">Head towards Mandai Wildlife Reserve</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">🌿 Evening — Night Safari</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🐅</div><div class="tl-content"><span class="tl-time">7:15 PM</span><div class="tl-title">Singapore Night Safari <span class="badge b-ok">BOOKED</span></div><div class="tl-desc">World's first nocturnal wildlife park · Mandai</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🚃</div><div class="tl-content"><span class="tl-time">~7:30 PM</span><div class="tl-title">Tram Ride</div><div class="tl-desc">45-min guided tram through 8 zones · 900+ nocturnal animals</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🦎</div><div class="tl-content"><span class="tl-time">~9:00 PM</span><div class="tl-title">Animal Trails + Creatures of the Night Show</div><div class="tl-desc">Walking trails · Live nocturnal animal performance</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">📦</div><div class="tl-content"><span class="tl-time">Late Night</span><div class="tl-title">Return &amp; Pack Bags</div><div class="tl-desc">Check-out tomorrow — bus to KL!</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cdiv">🚌 Singapore → Kuala Lumpur</div>
+
+<!-- DAY 4 -->
+<section id="day4" class="day-card">
+  <div class="cover tr">
+    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=900&q=80&auto=format&fit=crop" alt="Kuala Lumpur Petronas" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#6a1b9a,#4a148c)'">
+    <div class="cover-overlay">
+      <div class="cover-badge">Day 4 · Fri, June 27</div>
+      <div class="cover-title">Travel to Kuala Lumpur</div>
+      <div class="cover-sub">Singapore → KL 🇲🇾</div>
+    </div>
+    <div class="cover-tag">🚍</div>
+    <div class="cover-accent"></div>
+  </div>
+  <div class="card-body">
+    <div class="tl-group">
+      <div class="tl-group-label">🚍 Morning — Departure</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🧳</div><div class="tl-content"><span class="tl-time">Early Morning</span><div class="tl-title">Check-out V Lavender Hotel</div><div class="tl-desc">Head to Kovan Hub bus terminal</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🚌</div><div class="tl-content"><span class="tl-time">~12:30 PM</span><div class="tl-title">Bus from Kovan Hub → KL</div><div class="tl-desc">~5–6 hours · Sit back and enjoy the scenery</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">🇲🇾 Evening — Arrive KL</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🏙️</div><div class="tl-content"><span class="tl-time">~6:30 PM</span><div class="tl-title">Arrive Berjaya Times Square, KL</div><div class="tl-desc">Cab to Airbnb</div></div></div>
+        <div class="info-box"><div class="ib-name">🏠 Airbnb — Kuala Lumpur</div><div class="ib-addr">📍 1020 Jalan Sultan Ismail, Kuala Lumpur</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🌃</div><div class="tl-content"><span class="tl-time">Evening</span><div class="tl-title">KL Evening Walk</div><div class="tl-desc">KL Tower 🏙️ · Merdeka Square · Bukit Bintang — shopping + street food</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cdiv">🇲🇾 Kuala Lumpur</div>
+
+<!-- DAY 5 -->
+<section id="day5" class="day-card">
+  <div class="cover my">
+    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=900&q=80&auto=format&fit=crop" alt="Batu Caves" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1565c0,#0d47a1)'">
+    <div class="cover-overlay">
+      <div class="cover-badge">Day 5 · Sat, June 28</div>
+      <div class="cover-title">Batu Caves + Genting Highlands</div>
+      <div class="cover-sub">Kuala Lumpur 🇲🇾</div>
+    </div>
+    <div class="cover-tag">🛕</div>
+    <div class="cover-accent"></div>
+  </div>
+  <div class="card-body">
+    <div class="tl-group">
+      <div class="tl-group-label">🕉️ Morning — Batu Caves</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🌄</div><div class="tl-content"><span class="tl-time">7:30 AM</span><div class="tl-title">Head to Batu Caves <span class="badge b-tip">beat the crowd</span></div><div class="tl-desc">Early = cooler + fewer tourists · 30 min from city</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🛕</div><div class="tl-content"><span class="tl-time">~9:00 AM</span><div class="tl-title">Lord Murugan Statue &amp; Cave Temples <span class="badge b-must">MUST</span></div><div class="tl-desc">272 rainbow steps · 43m golden Murugan statue · Limestone caves</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">🚡 Midday — Genting Highlands</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🚡</div><div class="tl-content"><span class="tl-time">~11:30 AM</span><div class="tl-title">Awana SkyWay Cable Car</div><div class="tl-desc">Gondola ride to Genting · Stunning mountain views</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🎢</div><div class="tl-content"><span class="tl-time">Afternoon</span><div class="tl-title">SkyWorlds Theme Park &amp; Explore</div><div class="tl-desc">Rides · Casino (optional) · Cool mountain air 🌄</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🍽️</div><div class="tl-content"><span class="tl-time">Evening</span><div class="tl-title">Return to KL + Dinner + Rest</div><div class="tl-desc">Early night — Langkawi flight tomorrow!</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cdiv">✈️ KL → Langkawi</div>
+
+<!-- DAY 6 -->
+<section id="day6" class="day-card">
+  <div class="cover tr">
+    <img src="https://images.unsplash.com/photo-1559628233-100c798642d9?w=900&q=80&auto=format&fit=crop" alt="Langkawi beach" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#6a1b9a,#4a148c)'">
+    <div class="cover-overlay">
+      <div class="cover-badge">Day 6 · Sun, June 29</div>
+      <div class="cover-title">Fly to Langkawi</div>
+      <div class="cover-sub">KL → Langkawi 🏝️</div>
+    </div>
+    <div class="cover-tag">✈️</div>
+    <div class="cover-accent"></div>
+  </div>
+  <div class="card-body">
+    <div class="tl-group">
+      <div class="tl-group-label">✈️ Morning Flight</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🛫</div><div class="tl-content"><span class="tl-time">9:35 AM</span><div class="tl-title">Depart KL → Langkawi <span class="badge b-ok">BOOKED</span></div><div class="tl-desc">Short ~1 hr flight to paradise island</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🛬</div><div class="tl-content"><span class="tl-time">10:40 AM</span><div class="tl-title">Arrive Langkawi Airport (LGK)</div><div class="tl-desc">Head to Pantai Cenang</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🏨</div><div class="tl-content"><span class="tl-time">~12:00 PM</span><div class="tl-title">Check-in: Tropika Resort, Pantai Cenang</div><div class="tl-desc">Freshen up · Enjoy tropical resort vibes</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">🌿 Evening</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🚤</div><div class="tl-content"><span class="tl-time">Afternoon / Evening</span><div class="tl-title">Mangrove Tour <span class="badge b-must">MUST</span></div><div class="tl-desc">Ancient mangrove forests by boat · Return by sunset 🌅</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🌴</div><div class="tl-content"><span class="tl-time">Night</span><div class="tl-title">Pantai Cenang Beach Walk + Dinner</div><div class="tl-desc">Beachside restaurants · Night bazaar · Chill vibes 🌙</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cdiv">🏝️ Langkawi</div>
+
+<!-- DAY 7 -->
+<section id="day7" class="day-card">
+  <div class="cover lk">
+    <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=900&q=80&auto=format&fit=crop" alt="Cable car mountains" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#00897b,#00695c)'">
+    <div class="cover-overlay">
+      <div class="cover-badge">Day 7 · Mon, June 30</div>
+      <div class="cover-title">Adventure Day</div>
+      <div class="cover-sub">Langkawi 🏝️</div>
+    </div>
+    <div class="cover-tag">🚡</div>
+    <div class="cover-accent"></div>
+  </div>
+  <div class="card-body">
+    <div class="tl-group">
+      <div class="tl-group-label">🚡 Morning — Heights &amp; Views</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🚡</div><div class="tl-content"><span class="tl-time">Morning</span><div class="tl-title">Langkawi Cable Car (SkyCab) <span class="badge b-must">MUST</span></div><div class="tl-desc">Gondola to Gunung Mat Cincang peak · Jungle &amp; sea panorama</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🌉</div><div class="tl-content"><span class="tl-time">~10:30 AM</span><div class="tl-title">Sky Bridge</div><div class="tl-desc">Curved bridge at ~700m · Panoramic Andaman Sea views</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">🌊 Afternoon — Island Hopping</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🦅</div><div class="tl-content"><span class="tl-time">Afternoon</span><div class="tl-title">Island Hopping Tour <span class="badge b-must">MUST</span></div><div class="tl-desc">Eagle feeding 🦅 · Pregnant Maiden Lake · Beras Basah island · Snorkeling · Crystal lagoons</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">🌙 Night — Last Evening</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🛍️</div><div class="tl-content"><span class="tl-time">Night</span><div class="tl-title">Pantai Cenang — Shop &amp; Chill</div><div class="tl-desc">Duty-free shopping · Beachside cafes · Last island night!</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 8 -->
+<section id="day8" class="day-card">
+  <div class="cover lk">
+    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80&auto=format&fit=crop" alt="Water sports beach" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#00897b,#00695c)'">
+    <div class="cover-overlay">
+      <div class="cover-badge">Day 8 · Tue, July 1</div>
+      <div class="cover-title">Last Morning + Fly Home</div>
+      <div class="cover-sub">Langkawi → Kochi ✈️</div>
+    </div>
+    <div class="cover-tag">🏄</div>
+    <div class="cover-accent"></div>
+  </div>
+  <div class="card-body">
+    <div class="tl-group">
+      <div class="tl-group-label">🌊 Morning — Final Beach Fun</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🏄</div><div class="tl-content"><span class="tl-time">Morning</span><div class="tl-title">Water Sports at Pantai Cenang!</div><div class="tl-desc">Jet ski 🛥️ · Banana boat 🍌 · Parasailing · Last beach fun!</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🧳</div><div class="tl-content"><span class="tl-time">~11:00 AM</span><div class="tl-title">Check-out &amp; Head to Airport</div><div class="tl-desc">Grab lunch at the airport · Last Langkawi views 😢</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">✈️ Afternoon — Departure</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🛫</div><div class="tl-content"><span class="tl-time">1:55 PM</span><div class="tl-title">Langkawi → Kochi <span class="badge b-ok">BOOKED</span></div><div class="tl-desc">Bye Langkawi 🏝️ · Heading home with the best memories!</div></div></div>
+      </div>
+    </div>
+    <div class="tl-group">
+      <div class="tl-group-label">🏠 Night — Home!</div>
+      <div class="tl-items">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-icon">🎉</div><div class="tl-content"><span class="tl-time">11:45 PM</span><div class="tl-title">Arrive Kochi ✅</div><div class="tl-desc">Welcome home! What an incredible 9-day adventure! 🌏✨</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="ff">🇸🇬 🇲🇾 🏝️</div>
+  <p><strong style="color:#374151">Singapore · Kuala Lumpur · Langkawi</strong></p>
+  <p style="margin-top:.4rem">June 23 – July 1, 2026 · 9 days · Infinite memories ✨</p>
+</footer>
+
+<div class="fab">
+  <button class="fab-btn" onclick="share()" id="fabBtn">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.486"/></svg>
+    Share Trip
+  </button>
+</div>
+
+<script>
+// Scroll progress bar
+const prog = document.getElementById('prog');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  prog.style.width = Math.min(pct, 100) + '%';
+}, {passive: true});
+
+// Card entrance animation
+const cards = document.querySelectorAll('.day-card');
+const cardIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); cardIO.unobserve(e.target); }});
+}, {threshold: 0.06});
+cards.forEach(c => cardIO.observe(c));
+
+// Active nav highlight
+const sections = document.querySelectorAll('.day-card[id]');
+const btns = document.querySelectorAll('.day-btn[data-id]');
+const navEl = document.getElementById('nav');
+const navIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    btns.forEach(b => b.classList.remove('active'));
+    const a = document.querySelector(`.day-btn[data-id="${e.target.id}"]`);
+    if (a) { a.classList.add('active'); a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); }
+  });
+}, {rootMargin:'-15% 0px -65% 0px'});
+sections.forEach(s => navIO.observe(s));
+
+// Smooth scroll with nav offset
+btns.forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.getElementById(btn.dataset.id);
+    if (!t) return;
+    window.scrollTo({top: t.offsetTop - navEl.offsetHeight - 8, behavior:'smooth'});
+  });
+});
+
+// Share FAB
+function share() {
+  const url = location.href;
+  if (navigator.share) {
+    navigator.share({title:'🌏 SGP · KL · Langkawi Trip 2026', url}).catch(() => copy(url));
+  } else { copy(url); }
+}
+function copy(url) {
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.getElementById('fabBtn');
+    btn.textContent = '✅ Link Copied!';
+    setTimeout(() => { btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.486"/></svg> Share Trip'; }, 2500);
+  });
+}
+</script>
+</body>
+</html>
